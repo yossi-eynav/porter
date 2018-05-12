@@ -60,9 +60,9 @@ func exposedPortLookup(repository github.RepositoryResponse,  msgCh chan message
 }
 
 func usedPortsHandler(ch chan github.Repository, msgCh chan message.Message) {
-	var wg sync.WaitGroup
-
 	message.SendMessage("Fetching repositories in parallel","green" , msgCh, false)
+
+	var wg sync.WaitGroup
 	repositories := github.FetchAllRepositories()
 	repositoriesPortCh := make(chan github.Repository)
 	repositoriesLength := len(repositories)
