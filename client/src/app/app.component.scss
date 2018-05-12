@@ -1,0 +1,29 @@
+
+.app {
+  padding: 20px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  margin-top: 15px;
+
+  mat-list {
+    width: 400px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 5px;
+    max-height: 800px;
+    overflow-y: scroll;
+  }
+
+  app-terminal {
+    flex-grow: 5;
+    height: 800px;
+  }
+}

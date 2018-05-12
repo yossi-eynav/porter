@@ -1,0 +1,26 @@
+<div class="app">
+  <div class="actions">
+    <button class="start"(click)="fetchRepositories()" mat-raised-button>Fetch Data</button>
+    <button (click)="generatePort()" [disabled]="!repositories.length" mat-raised-button>Generate available port</button>
+    <button class="start"(click)="refresh()" mat-raised-button>Reset</button>
+
+  </div>
+
+  <ng-container>
+    <div class="content">
+      <mat-list *ngIf="repositories.length">
+        <h3 mat-subheader>Repositories ({{repositories.length}} total)</h3>
+
+        <mat-list-item *ngFor="let repo of repositories">
+          <a target="_blank" [href]="repo.Html_url" matLine>
+            {{repo.Name}}
+          </a>
+          <p matLine>
+            <span> Port: {{repo.ExposedPorts}} </span>
+          </p>
+        </mat-list-item>
+      </mat-list>
+      <app-terminal [logs]="messages"></app-terminal>
+    </div>
+  </ng-container>
+</div>

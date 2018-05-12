@@ -1,0 +1,16 @@
+.start {
+  width: 260px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -130px;
+  margin-top: -30px;
+}
+
+.generate {
+  width: 100%;
+}
+
+.app {
+  padding: 20px;
+}

@@ -1,0 +1,15 @@
+<div class="terminal">
+  <div class=fakeMenu>
+    <div class="fakeButtons fakeClose"></div>
+    <div class="fakeButtons fakeMinimize"></div>
+    <div class="fakeButtons fakeZoom"></div>
+  </div>
+  <div class="fakeScreen" #screen>
+    <p [class]=" 'line ' + line.Color" *ngFor="let line of logs">
+      {{line.Body}}
+      <span class="timestamp" *ngIf="line.Timestamp">
+        [{{line.Timestamp}}]
+      </span>
+    </p>
+  </div>
+</div>
